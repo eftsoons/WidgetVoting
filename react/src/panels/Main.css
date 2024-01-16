@@ -1,0 +1,123 @@
+.texterror {
+    position: relative;
+    top: 10px;
+    font-size: 0.8em;
+    color: var(--error-color);
+}
+
+.inputbutton {
+    width: 80%;
+    margin-right: 20px;
+    margin-top: 4px;   
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.inputcolor {
+    margin-left: 1.5%;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    width: 7%
+}
+
+.galleryphoto {
+    min-height: 100%;
+    width: 100%;
+    border-radius: 10px
+}
+
+.app_widget_list_cover_gradient {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.12),rgba(0,0,0,.6));
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+}
+
+.FlatButton {
+    --icon-weight-margin: -4px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background: 0 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: inline-block;
+    vertical-align: middle;
+
+    font-size: 13px;
+    font-family: inherit;
+    border-radius: var(--vkui--size_border_radius--regular);
+    color: var(--vkui--color_text_contrast);
+    background-color: var(--vkui--color_background_positive);
+    height: var(--vkui--size_button_medium_height--compact);
+    padding: 0 16px;
+}
+
+.app_widget_list_cover_controls {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+
+.app_widget_list_cover_button {
+    float: right;
+    padding-left: 12px;
+}
+
+.FlatButton__in {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+}
+
+.FlatButton__content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 1px;
+}
+
+.app_widget_list_title {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+    line-height: 12px;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 100%;
+    font-size: 12.5px;
+}
+
+.app_widget_list_info {
+    padding-top: 6px;
+    opacity: .8;
+    padding-top: 5px;
+    box-sizing: border-box;
+    color: white;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 100%;
+    font-size: 12.5px;
+}
