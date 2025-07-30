@@ -3,9 +3,9 @@ import bridge from "@vkontakte/vk-bridge";
 import { Gallery, FormItem, Button, ButtonGroup } from "@vkontakte/vkui";
 import { usePlatform } from "@vkontakte/vkui";
 
-import screen from "./screen.png";
-import screen1 from "./Снимок.PNG";
-import screen2 from "./Снимок2.PNG";
+import screen from "./screen.webp";
+import screen1 from "./screen2.webp";
+import screen2 from "./screen3.webp";
 import "./Info.css";
 
 const Info = () => {
@@ -22,24 +22,15 @@ const Info = () => {
         Тем самым вы улучшите опыт использования вашей группы и поднимете ей
         активность.
       </p>
-      <h4>Скриншоты</h4>
-      <FormItem>
-        <Gallery className="gallerey" bullets={"dark"} showArrows>
-          <img
-            className={platform == "vkcom" ? "screen2" : "screen4"}
-            src={screen}
-          />
-          <img
-            className={platform == "vkcom" ? "screen" : "screen3"}
-            src={screen1}
-          />
-          <img
-            className={platform == "vkcom" ? "screen" : "screen3"}
-            src={screen2}
-          />
-        </Gallery>
-      </FormItem>
-
+      <p>
+        Только с нашей системой вы сможете избавиться от ботов через условия
+        голоса.
+      </p>
+      <h4>Скриншот виджета</h4>
+      <img
+        className={platform == "vkcom" ? "screen2" : "screen4"}
+        src={screen}
+      />
       <FormItem>
         <ButtonGroup align="center" mode="horizontal" stretched={true}>
           <Button

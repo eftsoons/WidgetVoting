@@ -5,23 +5,15 @@
     color: var(--error-color);
 }
 
-.inputbutton {
-    width: 80%;
-    margin-right: 20px;
-    margin-top: 4px;   
-}
-
 .input-group {
     display: flex;
     align-items: center;
 }
 
-.inputcolor {
-    margin-left: 1.5%;
-    border: 0;
-    padding: 0;
-    background: transparent;
-    width: 7%
+.inputbutton {
+    width: 80% !important;
+    margin-right: 15px !important;
+    margin-top: 4px !important;   
 }
 
 .galleryphoto {
@@ -120,4 +112,18 @@
     white-space: nowrap;
     max-width: 100%;
     font-size: 12.5px;
+}
+
+.iconbutton {
+    margin-left: 3%;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    background-color: None;
+    border-radius: 10px;
+}
+
+.iconbutton:hover {
+    transition: background-color 0.5s;
+    background-color: rgba(150, 140, 140, 0.3);
+    border-radius: 10px;
 }

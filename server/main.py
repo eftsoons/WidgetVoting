@@ -10,7 +10,7 @@ def is_valid_json(json_str):
         return False
 
 while 1:
-	time.sleep(0.5)
+	time.sleep(0.1)
 	for folderlist in listdir("./bass"):
 		try:
 			with open(f"./bass/{folderlist}/tabl.json", "r", encoding='utf-8') as file:
@@ -20,10 +20,11 @@ while 1:
 				if tabl["rows"][x]["time"] == datetime.today().strftime("%d.%m.%Y %H:%M:%S") and tabl["rows"][x]["active6"]:
 					if is_valid_json(tabl["rows"][x]):
 						tabl["rows"][x]["active2"] = False
+						tabl["rows"][x]["active6"] = False
 						fileset = open(f"./bass/{folderlist}/tabl.json", "w", encoding='utf-8')
 						fileset.write(json.dumps(tabl, ensure_ascii=False))
 						fileset.close()
 					else:
 						print("JSON некорректен")
 		except:
-			print(f"Ошибка {folderlist}")
+			pass

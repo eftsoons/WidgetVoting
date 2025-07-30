@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.5791ed26.css",
-    "main.js": "/static/js/main.56a0d30b.js",
-    "static/media/screen.png": "/static/media/screen.df3ed909443e69bd2ac3.png",
-    "static/media/Снимок2.PNG": "/static/media/Снимок2.56e9240f22f072331370.PNG",
-    "static/media/Снимок.PNG": "/static/media/Снимок.d1b7095f02408e751963.PNG",
+    "main.css": "/static/css/main.db86c37c.css",
+    "main.js": "/static/js/main.1a3bd6a7.js",
+    "static/media/screen.webp": "/static/media/screen.c3b95e8f97e62d0d857a.webp",
+    "static/media/screen3.webp": "/static/media/screen3.31f30c15974f38fa3de6.webp",
+    "static/media/screen2.webp": "/static/media/screen2.d11907044af5e019e118.webp",
     "index.html": "/index.html",
-    "main.5791ed26.css.map": "/static/css/main.5791ed26.css.map",
-    "main.56a0d30b.js.map": "/static/js/main.56a0d30b.js.map"
+    "main.db86c37c.css.map": "/static/css/main.db86c37c.css.map",
+    "main.1a3bd6a7.js.map": "/static/js/main.1a3bd6a7.js.map"
   },
   "entrypoints": [
-    "static/css/main.5791ed26.css",
-    "static/js/main.56a0d30b.js"
+    "static/css/main.db86c37c.css",
+    "static/js/main.1a3bd6a7.js"
   ]
 }

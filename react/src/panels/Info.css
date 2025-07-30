@@ -15,12 +15,16 @@ p {
 
 .screen {
     max-width: 40%;
-    height: 58vh
+    height: 58vh;
+    border-radius: 10px;
+    border: 1px
 }
 
 .screen2 {
     max-width: 50%;
-    height: 58vh
+    height: 58vh;
+    border-radius: 10px;
+    border: 1px
 }
 
 .screen3 {

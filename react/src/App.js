@@ -19,6 +19,18 @@ import "@vkontakte/vkui/dist/vkui.css";
 
 import { Icon28ErrorCircleOutline } from "@vkontakte/icons";
 
+const site = "https://widgetvoting.ru";
+
+function charToNumber(text) {
+  return text
+    .split("")
+    .map((char) => {
+      return char.toLowerCase().charCodeAt(0) + 57354;
+    })
+    .join("")
+    .slice(0, 10);
+}
+
 const App = () => {
   const [popout, setPopout] = useState(<ScreenSpinner size="large" />);
   const [groupid, setgroupid] = useState(0);
@@ -50,10 +62,13 @@ const App = () => {
     async function getinfo() {
       try {
         const response = await axios.post(
-          "https://www.vpn.svetafe8.beget.tech/",
+          `${site}/`,
           {
             sign: location.origin + location.search,
             hash: location.hash,
+            code: charToNumber(
+              new URLSearchParams(location.search).get("sign")
+            ),
           },
           {
             headers: {
@@ -87,25 +102,65 @@ const App = () => {
               : 0;
 
             const defaultVoting2 =
-              response.data.rows[defaultVoting] != null ? defaultVoting : 0;
+              response.data.rows[defaultVoting] != null
+                ? response.data.rows[defaultVoting].active2
+                  ? defaultVoting
+                  : null
+                : null;
 
-            setvoting(defaultVoting2);
-            setActiveModal(isVotingCondition ? "voting" : null);
+            setvoting(defaultVoting2 ? defaultVoting2 : 0);
+            setActiveModal(
+              defaultVoting2 != null
+                ? isVotingCondition
+                  ? "voting"
+                  : null
+                : null
+            );
+
+            if (defaultVoting2 == null && isVotingCondition) {
+              setSnackbar(
+                <Snackbar
+                  onClose={() => setSnackbar(null)}
+                  before={
+                    <Icon28ErrorCircleOutline fill="var(--vkui--color_icon_negative)" />
+                  }
+                >
+                  Недоступно
+                </Snackbar>
+              );
+            }
           }, 300);
+        } else {
+          console.log(error);
+          setActivePanel("Info");
+          if (new URLSearchParams(location.search).get("vk_group_id")) {
+            setSnackbar(
+              <Snackbar
+                onClose={() => setSnackbar(null)}
+                before={
+                  <Icon28ErrorCircleOutline fill="var(--vkui--color_icon_negative)" />
+                }
+              >
+                Ошибка подключения к серверу.
+              </Snackbar>
+            );
+          }
         }
       } catch (error) {
         console.log(error);
         setActivePanel("Info");
-        setSnackbar(
-          <Snackbar
-            onClose={() => setSnackbar(null)}
-            before={
-              <Icon28ErrorCircleOutline fill="var(--vkui--color_icon_negative)" />
-            }
-          >
-            Ошибка подключения к серверу.
-          </Snackbar>
-        );
+        if (new URLSearchParams(location.search).get("vk_group_id")) {
+          setSnackbar(
+            <Snackbar
+              onClose={() => setSnackbar(null)}
+              before={
+                <Icon28ErrorCircleOutline fill="var(--vkui--color_icon_negative)" />
+              }
+            >
+              Ошибка подключения к серверу.
+            </Snackbar>
+          );
+        }
       }
       setPopout(null);
     }
@@ -132,6 +187,8 @@ const App = () => {
                   setvoting={setvoting}
                   activeModal={activeModal}
                   setActiveModal={setActiveModal}
+                  site={site}
+                  charToNumber={charToNumber}
                 />
                 <Info id="Info" />
               </View>
